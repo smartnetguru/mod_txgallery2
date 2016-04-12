@@ -1,4 +1,4 @@
-# Xpert Gallery Module
+# Xpert Custom Gallery Module
 
 Its a module to reduce the effort of a Joomla users for gallery of images and videos.
 its a [Magnific Popup](http://dimsemenov.com/plugins/magnific-popup/) based module.
