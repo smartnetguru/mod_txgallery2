@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>mod_txgallery</name>
+	<author>Abu Huraira Bin Aman</author>
+	<creationDate>Oct 2015</creationDate>
+	<copyright>Copyright (C) 2005 - 2015 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>shams.bd71@gmail.com</authorEmail>
+	<authorUrl>www.themexpert.com</authorUrl>
+	<version>1.1.0</version>
+	<description>MOD_TXGALLERY_XML_DESCRIPTION</description>
+	
+	<files>
+		<filename module="mod_txgallery">mod_txgallery.php</filename>
+		<file>helper.php</file>
+		<folder>tmpl</folder>
+	</files>
+
+	<media folder="media" destination="mod_txgallery">
+		<file>jquery.magnific-popup.min.js</file>
+		<file>magnific-popup.css</file>
+	</media>
+	<languages folder="language">
+		<language tag="en-GB">en-GB.mod_txgallery.ini</language>
+		<language tag="en-GB">en-GB.mod_txgallery.sys.ini</language>
+	</languages>
+	<help key="JHELP_EXTENSIONS_MODULE_MANAGER_SEARCH" />
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+					<field
+						name="gallery_type"
+						type="radio"
+						default="image"
+						class="btn-group"
+						label="Gallery Type"
+						description="Your Gallery type, Can be Images or video">
+						<option value="image">Image</option>
+						<option value="video">Video</option>
+					</field>
+
+					<field
+						name="image_gallery"
+						type="Repeatable"
+						icon="image"
+						select="Select Images"
+						description="Please select your images or give video links"
+						label="Image Gallery Items"
+						default="{'image_name':['Sample Image'],'image_link':['']}"
+						>
+						<fieldset hidden="true" name="image_gallery_modal" repeat="true">
+							<field
+								name="image_name"
+								type="text"
+								label="Image label"
+								showsize="0"
+								description="Image title or short name" />
+
+
+							<field
+								name="image_link"
+								label="Image"
+								size="30"
+								type="media"
+								/>
+						</fieldset>
+					</field>
+
+					<field
+						name="video_gallery"
+						type="Repeatable"
+						icon="video"
+						select="Select Videos"
+						description="Please select your images or give video links"
+						label="Image Gallery Items"
+						default="{'video_name':['Sample Image'],'video_image':[''],'video_link':[''],'video_type':['']}"
+						>
+						<fieldset hidden="true" name="video_gallery_modal" repeat="true">
+							<field
+								name="video_name"
+								type="text"
+								label="Image label"
+								showsize="0"
+								description="Image title or short name" />
+
+							<field
+								name="video_image"
+								label="Preview Image"
+								size="30"
+								type="media"
+								/>
+
+							<field
+								name="video_link"
+								type="text"
+								label="Video Link"
+								showsize="0"
+								description="Image title or short name" />
+
+							<field
+								name="video_type"
+								type="radio"
+								default="youtube"
+								label="Video Provider"
+							>
+								<option value="youtube">YouTube</option>
+								<option value="vimeo">Vimeo</option>
+							</field>
+
+						</fieldset>
+					</field>
+
+			</fieldset>
+
+			<fieldset
+				name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="textarea" rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="itemid">
+					<option
+						value="itemid"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
