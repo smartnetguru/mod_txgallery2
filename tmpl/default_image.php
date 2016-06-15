@@ -8,20 +8,22 @@
  */
 
 defined('_JEXEC') or die;
+$lists= array_chunk($lists, (12/$gallery_col) );
 ?>
-  <div class="row">
-    <?php foreach ($lists as $key => $value): ?>
-    <?php echo ($key != 0 && $key%4 == 0 ? "</div><div class='row'>" : ""); ?>
-    <div class="col-sm-6 col-md-3">
-      <div class="met-box no-padding">
-        <a href="<?php echo $value['image_link'] ?>">
-          <img class="img-responsive" src="<?php echo $value['image_link'] ?>" alt="<?php echo $value['image_name'] ?>" />
-        </a>
+<?php foreach($lists as $list):?>
+    <div class="row">
+    <?php foreach($list as $key => $value): ?>
+      <div class="col-sm-6 col-md-<?php echo $gallery_col; ?>">
+        <div class="met-box no-padding">
+          <a href="<?php echo $value['image_link'] ?>">
+            <img class="img-responsive" src="<?php echo $value['image_link'] ?>" alt="<?php echo $value['image_name'] ?>" />
+          </a>
+        </div>
+        <div class="caption text-center">
+          <h5><?php echo $value['image_name'] ?></h5>
+        </div>
       </div>
-      <div class="caption text-center">
-        <h5><?php echo $value['image_name'] ?></h5>
-      </div>
+    <?php endforeach;?>
     </div>
-  <?php endforeach; ?>
-</div>
+<?php endforeach;?>
 

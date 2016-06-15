@@ -40,6 +40,21 @@
 					</field>
 
 					<field
+						name="gallery_col"
+						type="list"
+						default="3"
+						class=""
+						label="Select Column"
+						description="Select number of column you want to display.">
+						<option value="12">1 Column</option>
+						<option value="6">2 Columns</option>
+						<option value="4">3 Columns</option>
+						<option value="3">4 Columns</option>
+						<option value="2">6 Columns</option>
+						<option value="1">12 Columns</option>
+					</field>
+
+					<field
 						name="image_gallery"
 						type="Repeatable"
 						icon="image"
