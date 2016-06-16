@@ -13,6 +13,7 @@ defined('_JEXEC') or die;
 require_once __DIR__ . '/helper.php';
 $app  = JFactory::getApplication();
 
+$bootstrap_ver  = $params->get('bootstrap_ver', 'bs3');
 $gallery_type  = $params->get('gallery_type', 'image');
 $gallery_col  = $params->get('gallery_col', 3);
 $image_gallery = $params->get('image_gallery');

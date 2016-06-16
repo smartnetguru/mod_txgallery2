@@ -29,6 +29,17 @@
 		<fields name="params">
 			<fieldset name="basic">
 					<field
+							name="bootstrap_ver"
+							type="radio"
+							default="bs3"
+							class="btn-group"
+							label="Bootstrap Version"
+							description="Select your template bootstrap version.">
+						<option value="bs3">Bootstrap 3</option>
+						<option value="bs2">Bootstrap 2</option>
+					</field>
+
+					<field
 						name="gallery_type"
 						type="radio"
 						default="image"
