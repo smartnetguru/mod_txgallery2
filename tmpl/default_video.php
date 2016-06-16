@@ -8,13 +8,14 @@
  */
 
 defined('_JEXEC') or die;
+$grid = $bootstrap_ver == 'bs3'? 'col-md-' : 'span';
 $lists= array_chunk($lists, (12/$gallery_col) );
 ?>
 
 <?php foreach($lists as $list):?>
   <div class="row">
     <?php foreach($list as $key => $value): ?>
-      <div class="col-sm-6 col-md-<?php echo $gallery_col; ?>">
+      <div class="<?php echo $grid.$gallery_col; ?>">
         <div class="met-box no-padding">
           <a href="<?php echo $value['video_link'] ?>" class="mfp-iframe">
             <img src="<?php echo $value['video_image'] ?>" alt="<?php echo $value['video_name'] ?>" class="img-responsive"/>
