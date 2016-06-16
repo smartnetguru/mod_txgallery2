@@ -14,6 +14,7 @@ require_once __DIR__ . '/helper.php';
 $app  = JFactory::getApplication();
 
 $gallery_type  = $params->get('gallery_type', 'image');
+$gallery_col  = $params->get('gallery_col', 3);
 $image_gallery = $params->get('image_gallery');
 $video_gallery = $params->get('video_gallery');
 if($gallery_type == 'image'){
